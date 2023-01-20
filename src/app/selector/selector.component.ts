@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {DateService} from "../shared/date.service";
 
 @Component({
   selector: 'app-selector',
   templateUrl: './selector.component.html',
   styleUrls: ['./selector.component.scss']
 })
-export class SelectorComponent {
+export class SelectorComponent{
+
+  constructor(public dateService: DateService) { }
+
+  onArrow(num: number) {
+    this.dateService.changeMonth(num);
+  }
 
 }
